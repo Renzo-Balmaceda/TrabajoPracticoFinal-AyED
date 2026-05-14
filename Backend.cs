@@ -31,7 +31,7 @@ namespace tpfinal
             }
             else
             {
-                (new Estrategia()).BuscarConOtro(datos, cantidad, collected);
+                (new Estrategia()).BuscarConOrden(datos, cantidad, collected);
             }
             
         }

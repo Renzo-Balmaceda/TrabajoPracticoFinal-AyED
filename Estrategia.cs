@@ -16,18 +16,8 @@ namespace tpfinal
 	
 		public String Consulta1(List<string> datos)
 		{
-			List<Dato> collected1=new List<Dato>();
-			Stopwatch sw = Stopwatch.StartNew();
-			BuscarConHeap(datos, 5, collected1);
-			double t1=sw.Elapsed.TotalMilliseconds;
-			List<Dato> collected2 = new List<Dato>();
-			sw.Restart();
-			BuscarConOtro(datos,5,collected2);
-			double t2=sw.Elapsed.TotalMilliseconds;
-
-			string resutl = "El método BuscarConHeap() tardó un total de " +t1.ToString()+" ms. El método BuscarConOtro() tardó un total de " + t2.ToString()
-				+ " ms.";
-            return resutl;
+			string result = "Implementar";
+            return result;
 		}
 
 
@@ -48,7 +38,7 @@ namespace tpfinal
 		}
 
 
-		public List<Dato> BuscarConOtro(List<string> datos, int cantidad, List<Dato> collected)
+		public List<Dato> BuscarConOrden(List<string> datos, int cantidad, List<Dato> collected)
 		{
 			Dictionary<string, Dato> dict = new Dictionary<string, Dato>();
 			foreach (var texto in datos)
