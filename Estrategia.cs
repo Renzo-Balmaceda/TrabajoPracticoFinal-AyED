@@ -13,7 +13,6 @@ namespace tpfinal
 
 	public class Estrategia
 	{
-	
 		public String Consulta1(List<string> datos)
 		{
             int repeticiones = 5;
@@ -34,17 +33,13 @@ namespace tpfinal
                     sw.Stop();
                     totalOrden += sw.Elapsed.TotalMilliseconds;
              }
-
             double promedioHeap = totalHeap / repeticiones;
             double promedioOrden = totalOrden / repeticiones;
-
             string result = "Promedio de " + repeticiones + " ejecuciones:\n";
             result += "BuscarConHeap(): " + promedioHeap.ToString("F4") + " ms\n";
             result += "BuscarConOrden(): " + promedioOrden.ToString("F4") + " ms";
-
             return result;
         }
-
 
 		public String Consulta2(List<string> datos)
 		{
@@ -72,8 +67,6 @@ namespace tpfinal
             return resultado;
         }
 
-		
-
 		public String Consulta3(List<string> datos)
 		{
 			string resultado = "";
@@ -95,7 +88,6 @@ namespace tpfinal
             Heap<Dato> heapFrecuencias = new Heap<Dato>(arreglo, true, arreglo.Length - 1);
 			int nivelActual = 1;
 			int IndiceSiguienteNivel = 2;
-			Dictionary <Dato, int> niveles= new Dictionary<Dato, int>();
 			for (int i=1; i<arreglo.Length-1; i++) 
 			{
 				if (i < IndiceSiguienteNivel)
@@ -111,7 +103,6 @@ namespace tpfinal
 			}
 			return resultado;
 		}
-
 
 		public List<Dato> BuscarConOrden(List<string> datos, int cantidad, List<Dato> collected)
 		{
@@ -130,23 +121,17 @@ namespace tpfinal
 			Dato[] arreglo = dict.Values.ToArray();
 			Ordenamiento<Dato> aux = new Ordenamiento<Dato>();
 			aux.MaxMergeSort(ref arreglo, 0, arreglo.Length - 1);
-
             int limite = Math.Min(cantidad, arreglo.Length);
-
             for (int i = 0; i < limite; i++)
             {
                 collected.Add(arreglo[i]);
             }
 			return collected;
-           
         }
-
-
 
         public List<Dato> BuscarConHeap(List<string> datos, int cantidad, List<Dato> collected)
 		{
-
-			Dictionary < string, Dato> dict= new Dictionary < string, Dato>();
+            Dictionary < string, Dato> dict= new Dictionary < string, Dato>();
 			foreach (var texto in datos)
 			{
 				if (dict.ContainsKey(texto))
